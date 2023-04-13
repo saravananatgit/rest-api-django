@@ -26,9 +26,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 SECRET_KEY = 'django-insecure--*)m%7=1cel3(&x+lo^@8v2(m)r7pi#^z&!&)a3vowv=2l=yb!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -83,8 +83,15 @@ WSGI_APPLICATION = 'DjangoApi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "django",
+        "USER": "djanodb",
+        "PASSWORD": "hrs@azure1",
+        "HOST": "python-db-hrs.postgres.database.azure.com",
+        "PORT": "5432",
+        "OPTIONS" : {
+            'sslmode' : 'require'
+        }
     }
 }
 
